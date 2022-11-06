@@ -40,4 +40,4 @@ RegisterController.post('/', async (req, res) => {
 });
 
 // export default RegisterController;
-module.exports = RegisterController;
+module.exports.default = RegisterController;
