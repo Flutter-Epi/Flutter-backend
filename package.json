@@ -5,6 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "node -r esm app.js",
+        "build": "ncc build app.js -o dist",
         "dev": "nodemon -r esm app.js -p 8080"
     },
     "dependencies": {
@@ -18,6 +19,7 @@
         "mongoose": "^5.12.3"
     },
     "devDependencies": {
+        "@vercel/ncc": "^0.34.0",
         "nodemon": "^2.0.4"
     }
 }

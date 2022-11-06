@@ -1,5 +1,5 @@
 import LoginController from "./auth/loginController";
-import RegisterController from "./auth/registerController";
+import RegisterController from "./auth/RegisterController";
 import UserController from "./userController";
 
 export { LoginController };
