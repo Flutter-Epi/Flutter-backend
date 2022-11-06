@@ -1,12 +1,20 @@
-import express from "express";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
-import _ from "lodash";
+// import express from "express";
+// import jwt from "jsonwebtoken";
+// import bcrypt from "bcrypt";
+// import _ from "lodash";
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+const _ = require("lodash");
 
-import { User } from "../database/models";
-import { checkJwt } from "../store/middlewares";
-import { validateUpdateUser } from "../store/validators";
-import { config } from "../store/config";
+// import { User } from "../database/models";
+// import { checkJwt } from "../store/middlewares";
+// import { validateUpdateUser } from "../store/validators";
+// import { config } from "../store/config";
+const User = require("../database/models/userModel");
+const { checkJwt } = require("../store/middlewares");
+const { validateUpdateUser } = require("../store/validators");
+const { config } = require("../store/config");
 
 const UserController = express.Router();
 
@@ -71,4 +79,5 @@ UserController.delete('/:id', checkJwt, async (req, res) => {
         });
 });
 
-export default UserController;
+// export default UserController;
+module.exports = UserController;

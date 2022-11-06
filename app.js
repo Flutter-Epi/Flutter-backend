@@ -1,9 +1,14 @@
-import express from 'express';
-import cors from 'cors';
-import mongoose from "mongoose";
+// import express from 'express';
+// import cors from 'cors';
+// import mongoose from "mongoose";
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
-import { config } from "./store/config";
-import { LoginController, RegisterController, UserController } from "./controller";
+// import { config } from "./store/config";
+// import { LoginController, RegisterController, UserController } from "./controller";
+const { config } = require('./store/config');
+const { LoginController, RegisterController, UserController } = require('./controller');
 
 const app = express();
 

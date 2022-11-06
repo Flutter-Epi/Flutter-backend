@@ -1,4 +1,5 @@
-import { Schema } from "mongoose";
+//import { Schema } from "mongoose";
+const Schema = require('mongoose').Schema;
 
 const userSchema = new Schema({
     username: {
@@ -29,4 +30,5 @@ const userSchema = new Schema({
     },
 }, { timestamps: { createdAt: "CreatedAt", updatedAt: "UpdatedAt" }});
 
-export default userSchema;
+// export default userSchema;
+module.exports = userSchema;
