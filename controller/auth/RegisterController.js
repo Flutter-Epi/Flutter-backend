@@ -1,18 +1,11 @@
-// import express from "express";
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcrypt";
-// import _ from "lodash";
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const _ = require("lodash");
+import express from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import _ from "lodash";
 
-// import User from "../../database/models/userModel";
-// import { validateRegister } from "../../store/validators";
-// import { config } from "../../store/config";
-const User = require("../../database/models/userModel");
-const { validateRegister } = require("../../store/validators");
-const { config } = require("../../store/config");
+import User from "../../database/models/userModel";
+import { validateRegister } from "../../store/validators";
+import { config } from "../../store/config";
 
 const RegisterController = express.Router();
 
@@ -39,6 +32,4 @@ RegisterController.post('/', async (req, res) => {
     }
 });
 
-// export default RegisterController;
-// module.exports.default = RegisterController;
-exports.default = RegisterController;
+export default RegisterController;

@@ -1,7 +1,6 @@
-//import Joi from "joi";
-const Joi = require("joi");
+import Joi from "joi";
 
-function validateLogin(user) {
+export function validateLogin(user) {
     const schema = Joi.object({
         username: Joi.string() .min(1) .max(50) .required(),
         password: Joi.string() .min(1) .max(255) .required()
@@ -10,7 +9,7 @@ function validateLogin(user) {
     return schema.validate(user);
 }
 
-function validateRegister(user) {
+export function validateRegister(user) {
     const schema = Joi.object({
         username: Joi.string() .min(1) .max(50) .required(),
         email: Joi.string() .min(1) .max(255) .required() .email(),
@@ -20,7 +19,7 @@ function validateRegister(user) {
     return schema.validate(user);
 }
 
-function validateUpdateUser(user) {
+export function validateUpdateUser(user) {
     const schema = Joi.object({
         username: Joi.string() .min(1) .max(50),
         email: Joi.string() .min(1) .max(255) .email(),
@@ -30,5 +29,3 @@ function validateUpdateUser(user) {
 
     return schema.validate(user);
 }
-
-module.exports = { validateLogin, validateRegister, validateUpdateUser };

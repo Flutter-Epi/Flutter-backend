@@ -1,10 +1,8 @@
-//import jwt from "jsonwebtoken";
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-// import { config } from "./config";
-const { config } = require("./config");
+import { config } from "./config";
 
-async function checkJwt(req, res, next) {
+export async function checkJwt(req, res, next) {
     if (!req.headers.authorization)
         return res.status(401).json({error: 'You need to be logged in to proceed'});
     else {
@@ -18,5 +16,3 @@ async function checkJwt(req, res, next) {
         });
     }
 }
-
-module.exports = { checkJwt };
