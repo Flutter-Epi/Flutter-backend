@@ -27,7 +27,7 @@ LoginController.post('/', async (req, res) => {
 
     user['token'] = jwt.sign({ _id: user._id }, config.privateKey, {algorithm: 'RS256'});
 
-    res.status(200).send(_.pick(user, ['_id', 'email', 'token']));
+    res.status(200).send(_.pick(user, ['_id', 'email', 'token', 'role']));
 });
 
 export default LoginController;

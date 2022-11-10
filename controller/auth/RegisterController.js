@@ -28,7 +28,7 @@ RegisterController.post('/', async (req, res) => {
 
         await user.save();
 
-        res.status(201).send(_.pick(user, ['_id', 'username', 'email', 'token']));
+        res.status(201).send(_.pick(user, ['_id', 'username', 'email', 'token', 'role']));
     }
 });
 
