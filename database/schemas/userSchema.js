@@ -27,11 +27,16 @@ const userSchema = new Schema({
         minlength: 1,
         maxlength: 50,
     },
-    token: {
+    spotify_token: {
         type: String,
         required: false,
         minlength: 1,
         maxlength: 255,
+    },
+    picture: {
+        type: String,
+        required: false,
+        minlength: 1,
     }
 }, { timestamps: { createdAt: "CreatedAt", updatedAt: "UpdatedAt" }});
 

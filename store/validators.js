@@ -25,7 +25,8 @@ export function validateUpdateUser(user) {
         email: Joi.string() .min(1) .max(255) .email(),
         role: Joi.string() .min(1) .max(50),
         password: Joi.string() .min(1) .max(255),
-        token: Joi.string() .min(1) .max(255)
+        spotify_token: Joi.string() .min(1) .max(255),
+        picture: Joi.string() .min(1)
     });
 
     return schema.validate(user);

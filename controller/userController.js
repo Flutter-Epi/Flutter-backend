@@ -15,7 +15,7 @@ UserController.get('/' , checkJwt, async (req, res) => {
         let userMap = [];
 
         users.forEach((user) => {
-            userMap.push(_.pick(user, ['_id', 'username','email','role', 'createdAt', 'updatedAt']));
+            userMap.push(_.pick(user, ['_id', 'username','email','role', 'spotify_token', "picture", 'createdAt', 'updatedAt']));
         });
 
         res.status(200).send(userMap);
@@ -26,7 +26,7 @@ UserController.get('/:id', checkJwt, async (req, res) => {
     let user = await User.findOne({ _id: req.params.id });
 
     if (user)
-        res.send(_.pick(user, ['_id', 'username','email','role', 'createdAt', 'updatedAt']));
+        res.send(_.pick(user, ['_id', 'username','email','role','spotify_token', "picture", 'createdAt', 'updatedAt']));
     else
         res.status(404).json({error: "User not found"});
 });
