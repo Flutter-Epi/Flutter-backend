@@ -27,6 +27,12 @@ const userSchema = new Schema({
         minlength: 1,
         maxlength: 50,
     },
+    token: {
+        type: String,
+        required: false,
+        minlength: 1,
+        maxlength: 255,
+    }
 }, { timestamps: { createdAt: "CreatedAt", updatedAt: "UpdatedAt" }});
 
 export default userSchema;

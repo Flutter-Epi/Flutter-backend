@@ -24,7 +24,8 @@ export function validateUpdateUser(user) {
         username: Joi.string() .min(1) .max(50),
         email: Joi.string() .min(1) .max(255) .email(),
         role: Joi.string() .min(1) .max(50),
-        password: Joi.string() .min(1) .max(255)
+        password: Joi.string() .min(1) .max(255),
+        token: Joi.string() .min(1) .max(255)
     });
 
     return schema.validate(user);
